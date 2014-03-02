@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/timothy/Library/Calendars/6F425139-E287-4A30-844B-B08F7E86C902.caldav/1DD21627-E1D0-4ED2-932D-9A7AE9B81DD1.calendar/Events'
+let g:netrw_dirhist_2='/Users/timothy/Library/Calendars/6F425139-E287-4A30-844B-B08F7E86C902.caldav/262692AC-1EB5-469E-83CE-FC0209B1FB26.calendar/Events'
+let g:netrw_dirhist_3='/Users/timothy/Library/Calendars/6F425139-E287-4A30-844B-B08F7E86C902.caldav/57C8C1B2-CC9C-45C1-8F03-E8B37173D5BC.calendar/Events'
+let g:netrw_dirhist_4='/Users/timothy/Documents/Projects/Applications'
+let g:netrw_dirhist_5='/Users/timothy/Documents/Projects/Applications/Now/htmlview/static'
