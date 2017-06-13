@@ -58,6 +58,7 @@ set autoread
 " Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=4
 set softtabstop=4
+set tabstop=4 " For Makefiles and other files that use normal tabs
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
@@ -71,9 +72,19 @@ set expandtab
 " Get myself a color scheme
 colorscheme molokai
 
+" Turn on spellcheck by default
+set spell spelllang=en_gb
+
 " Use Pathogen to manage plugins
 execute pathogen#infect()
 
 " Apparently, modelines can be security problems.  I'll turn them off until I
 " need them.
 set modelines=0
+
+"-------------------------------------------------------------
+" Tim's weird keymaps
+" C-j to exit insert
+imap <C-j> <Esc>
+" C-k to insert a tab
+imap <C-k> <Tab>
