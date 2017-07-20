@@ -67,6 +67,10 @@ set expandtab
 "set tabstop=4
 "set smarttab
 
+" Wrapping will show up here too
+set wrap
+set linebreak
+
 "------------------------------------------------------------
 "
 " Get myself a color scheme
@@ -84,7 +88,7 @@ set modelines=0
 
 "-------------------------------------------------------------
 " Tim's weird keymaps
-" C-j to exit insert
-imap <C-j> <Esc>
-" C-k to insert a tab
-imap <C-k> <Tab>
+imap jk <Esc>
+
+iabb mbf \mathbf{
+
