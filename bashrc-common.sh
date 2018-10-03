@@ -16,6 +16,3 @@ function weather() {
     curl -s http://wttr.in | sed '$d' | sed '$d'
 }
 
-function lmk() {
-    latexmk -pdf -pvc -outdir=$1-out $1.tex
-}
