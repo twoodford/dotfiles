@@ -86,9 +86,31 @@ execute pathogen#infect()
 " need them.
 set modelines=0
 
+"------------------------------------------------------------
+" Language-specific
+
+" Latex
+let g:vimtex_compiler_latexmk = {
+    \ 'backend' : 'jobs',
+    \ 'background' : 1,
+    \ 'build_dir' : 'vimtex_build',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'options' : [
+    \   '-pdf',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+\}
+
+let g:vimtex_view_general_viewer = '/Users/tim/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-rg @line @pdf @tex'
+
 "-------------------------------------------------------------
 " Tim's weird keymaps
-imap jk <Esc>
 
 iabb mbf \mathbf{
 
