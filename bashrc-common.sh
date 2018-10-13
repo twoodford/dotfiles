@@ -1,7 +1,16 @@
 osname=`uname -s`
 if [[ "$osname" = "Darwin" ]]; then
     alias gvim="mvim"
-    alias vi="mvim"
+    function vi() {
+        dn=`dirname $1`
+        fn=`basename $1`
+        sn="$dn/.$fn.swp"
+        if [[ -f $sn ]]; then
+            osascript ~/.dotfiles/mvim-open.applescript $1 `basename $1`
+        else
+            mvim $1
+        fi
+    }
 elif [[ "$osname" = "Linux" ]]; then
     if [[ "$TERM" = "xterm" ]]; then
         alias vi="gvim"
