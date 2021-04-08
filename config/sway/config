@@ -1,6 +1,4 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
+# (Modified) default config for sway
 #
 # Read `man 5 sway` for a complete reference.
 
@@ -27,6 +25,7 @@ font pango:Noto Mono 12
 
 ### Monitor Layout
 output LVDS-1 pos 0 1200
+output HDMI-A-1 pos 0 0
 output DP-1 pos 0 0
 
 ### Output configuration
@@ -45,9 +44,13 @@ output * bg /home/tim/Wallpapers/dublin-snow.jpg fill
 #
 # Example configuration:
 #
-exec swayidle -w \
-         timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#         timeout 200 'swaylock -f -c 000000' \
+#         timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+#         before-sleep 'swaylock -f -c 000000'
+
+exec /bin/bash ~/.dotfiles/bin/sway-locker.sh safe-mode
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -100,6 +103,9 @@ input * {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
+    # Lock screen
+    bindsym $mod+mod1+l exec '/bin/sh ~/.dotfiles/bin/sway-locker.sh lock-now'
 
     # Exit sway (logs you out of your Wayland session)
     #bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -198,6 +204,7 @@ input * {
 #
 
     bindsym $mod+mod1+4 exec 'grim -g "$(slurp)" - | wl-copy'
+    bindsym $mod+mod1+3 exec 'grim - | wl-copy'
 
 #
 # Resizing containers:
