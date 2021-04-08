@@ -16,5 +16,5 @@ default_border pixel 3
 # Gaps between windows
 #smart_gaps on
 gaps inner 6
-gaps outer 12
+gaps outer 6
 
