@@ -71,17 +71,38 @@ set expandtab
 set wrap
 set linebreak
 
+" ---------------------------------------------------------------
+" Encodings
+
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
+"
+" Plugins
+"
+
+call plug#begin('~/.local/share/nvim/site/plug')
+
+Plug 'drewtempelmeyer/palenight.vim', {'commit': '847fcf5b1de2a1f9c28fdcc369d009996c6bf633'}
+Plug 'vim-airline/vim-airline', {'tag': 'v0.11'}
+
+call plug#end()
+
 "------------------------------------------------------------
 "
 " Get myself a color scheme
-colorscheme molokai
+set background=dark
+colorscheme palenight
 
 " Turn on spellcheck by default
-set spell spelllang=en_gb
+set spell spelllang=en_us
 
 " Apparently, modelines can be security problems.  I'll turn them off until I
 " need them.
 set modelines=0
+
+"set g:GuiFont="Fira Mono for Powerline:h12"
 
 "------------------------------------------------------------
 " Language-specific
@@ -111,3 +132,30 @@ let g:vimtex_view_general_options = '-rg @line @pdf @tex'
 
 iabb mbf \mathbf{
 
+
+"
+" Plugin settings
+"
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
